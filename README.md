@@ -14,41 +14,6 @@ The reference vertical is a **CISO Decision OS**: a set of agents that reason ov
 
 ## Architecture
 
-```mermaid
-graph TD
-    %% Layer 1: The Intellectual Property
-    subgraph Layer1 [1. Domain Brain — The Moat]
-        A1[Ontology: NIST, MITRE ATT&CK] --> A2[Security Playbooks]
-        A2 --> A3[Compliance Policies]
-    end
-
-    %% Layer 2: The Reasoning Engine
-    subgraph Layer2 [2. Agent Workforce — Reasoning]
-        B1[Orchestrator] --> B2[CISO Advisor]
-        B2 --> B3[Incident Analyst]
-        B3 --> B4[Remediation Planner]
-        B4 --> B5[Reviewer]
-    end
-
-    %% Layer 3: The Execution Layer
-    subgraph Layer3 [3. Skill Layer — Action]
-        C1[Retrieve] --> C2[Map & Classify]
-        C2 --> C3[Score & Prioritize]
-        C3 --> C4[Execute & Learn]
-    end
-
-    %% Cross-cutting Concerns
-    subgraph Layer4 [Trust & Sovereignty]
-        D1[Security Guards] --- D2[Evaluation]
-        D2 --- D3[Topology Portability]
-    end
-
-    %% Logic Flow
-    Layer1 ==> Layer2
-    Layer2 ==> Layer3
-    Layer3 -.-> |Continuous Learning| Layer1
-    Layer4 -.-> Layer2
-
 The system is built on three architectural layers:
 
 1. **Domain Brain — the moat:** Ontology, playbooks, policies, and KPIs that encode how security operations actually work. The domain pack is the IP, not the agents or the LLM.
