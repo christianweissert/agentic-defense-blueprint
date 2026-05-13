@@ -13,6 +13,29 @@ The reference vertical is a **CISO Decision OS**: a set of agents that reason ov
 * **Output:** Prioritized incidents with MITRE-mapped technique chains, remediation playbooks with effort/impact scoring, and audit-grade evidence trails.
 
 ## Architecture
+
+graph TD
+    %% Couche 1: Le Cerveau du Domaine
+    subgraph Layer1 [1. Domain Brain — The Moat]
+        A1[Ontology: NIST, MITRE ATT&CK] --> A2[Security Playbooks]
+    end
+
+    %% Couche 2: La Force de Travail Agentique
+    subgraph Layer2 [2. Agent Workforce — Reasoning]
+        B1[Orchestrator] --> B2[Specialized Agents]
+    end
+
+    %% Couche 3: La Couche de Capacités
+    subgraph Layer3 [3. Skill Layer — Action]
+        C1[Atomic Skills] --> C2[External Tools/SIEM]
+    end
+
+    %% Flux et Gouvernance
+    Layer1 ==> Layer2
+    Layer2 ==> Layer3
+    Layer3 -.-> |Feedback| Layer1
+
+
 The system is built on three architectural layers:
 
 1. **Domain Brain — the moat:** Ontology, playbooks, policies, and KPIs that encode how security operations actually work. The domain pack is the IP, not the agents or the LLM.
